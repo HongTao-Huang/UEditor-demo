@@ -135,13 +135,13 @@
       console.log(UE.getEditor('editor').getAllHtml());
     }
     function getContent() {
-  console.log(UE.getEditor('editor').getAllHtml().replace('<html>', '').replace('</html>', '').replace('<head>', '').replace('</head>', ''));
+  var styles = UE.getEditor('editor').getAllHtml().replace('<html>', '').replace('</html>', '').replace('<head>', '').replace('</head>', '');
         var arr = [];
         arr.push("预览内容为：");
         arr.push(UE.getEditor('editor').getContent());
       modal.classList.add('active');
       main.classList.add('active');
-      modalContent.innerHTML += UE.getEditor('editor').getAllHtml().replace('<html>', '').replace('</html>', '').replace('<head>', '').replace('</head>', '')+ arr.join("\n");
+      modalContent.innerHTML += styles.slice(0, styles.indexOf('<body'))+ arr.join("\n");
     }
 
     function closeModal(){
