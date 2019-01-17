@@ -900,12 +900,15 @@ UE.parse.register('list',function(utils){
             'num1'  :   'num-2-',
             'num2'  :   'num-3-',
             'dash'  :   'dash',
-            'dot'   :   'dot'
+            'dot'   :   'dot',
+            'rhombohedron': 'rhombohedron',
+            'rightside': 'rightside',
+            'rightarrow': 'rightarrow'
         };
 
 
     utils.extend(this,{
-        liiconpath : 'http://bs.baidu.com/listicon/',
+        liiconpath : 'ueditor-list/',
         listDefaultPaddingLeft : '20'
     });
 
@@ -934,7 +937,7 @@ UE.parse.register('list',function(utils){
         utils.each(nodes,function(list){
             if(list.className && /custom_/i.test(list.className)){
                 var listStyle = list.className.match(/custom_(\w+)/)[1];
-                if(listStyle == 'dash' || listStyle == 'dot'){
+                if(listStyle == 'dash' || listStyle == 'dot' || p == 'rhombohedron' || p == 'rightside' || p == 'rightarrow'){
                     utils.pushItem(customCss,selector +' li.list-' + customStyle[listStyle] + '{background-image:url(' + T.liiconpath +customStyle[listStyle]+'.gif)}');
                     utils.pushItem(customCss,selector +' ul.custom_'+listStyle+'{list-style:none;} '+ selector +' ul.custom_'+listStyle+' li{background-position:0 3px;background-repeat:no-repeat}');
 
@@ -976,7 +979,17 @@ UE.parse.register('list',function(utils){
                         utils.pushItem(customCss,selector + ' li.list-'+listStyle+'-paddingleft{padding-left:35px}');
                         break;
                     case 'dot':
-                        utils.pushItem(customCss,selector + ' li.list-'+listStyle+'-paddingleft{padding-left:20px}');
+                        customCss.push('li.list-'+p+'-paddingleft{padding-left:20px}');
+                        break;
+                    case 'rhombohedron':
+                        customCss.push('li.list-'+p+'-paddingleft{padding-left:20px}');
+                        break;
+                    case 'rightside':
+                        customCss.push('li.list-'+p+'-paddingleft{padding-left:20px}');
+                        break;
+                    case 'rightarrow':
+                        customCss.push('li.list-'+p+'-paddingleft{padding-left:20px}');
+                        break;
                 }
             }
         });

@@ -28,7 +28,6 @@ UE.I18N['zh-cn'] = {
         'music':'音乐','inserttable':'插入表格','drafts': '从草稿箱加载', 'charts': '图表'
     },
     'insertorderedlist':{
-        'num':'1,2,3...',
         'num1':'1),2),3)...',
         'num2':'(1),(2),(3)...',
         'cn':'一,二,三....',
@@ -45,7 +44,10 @@ UE.I18N['zh-cn'] = {
         'disc':'● 小黑点',
         'square':'■ 小方块 ',
         'dash' :'— 破折号',
-        'dot':' 。 小圆圈'
+        'dot':' 。 小圆圈',
+        'rhombohedron': '◇ 菱形',
+        'rightside': '☞ 右边',
+        'rightarrow': '> 三角箭头'
     },
     'paragraph':{'p':'段落', 'h1':'标题 1', 'h2':'标题 2', 'h3':'标题 3', 'h4':'标题 4', 'h5':'标题 5', 'h6':'标题 6'},
     'fontfamily':{

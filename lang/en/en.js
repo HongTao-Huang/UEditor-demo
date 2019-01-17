@@ -28,7 +28,6 @@ UE.I18N['en'] = {
         'music':'Music', 'charts': 'charts','drafts': 'Load from Drafts'
     },
     'insertorderedlist':{
-        'num':'1,2,3...',
         'num1':'1),2),3)...',
         'num2':'(1),(2),(3)...',
         'cn':'一,二,三....',
@@ -45,7 +44,10 @@ UE.I18N['en'] = {
         'disc':'● Circle dot',
         'square':'■ Rectangle ',
         'dash' :'－ Dash',
-        'dot' : '。dot'
+        'dot' : '。dot',
+        'rhombohedron': '◇ rhombohedron',
+        'rightside': '☞ rightside',
+        'rightarrow': '> arrow'
     },
     'paragraph':{'p':'Paragraph', 'h1':'Title 1', 'h2':'Title 2', 'h3':'Title 3', 'h4':'Title 4', 'h5':'Title 5', 'h6':'Title 6'},
     'fontfamily':{

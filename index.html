@@ -54,6 +54,7 @@
         border-radius: 5px;
         margin: 30px 10px;
       }
+
     </style>
 </head>
 <body>
@@ -66,18 +67,20 @@
       <h1>完整demo</h1>
       <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
     </div>
-
     <div id="btns">
-        <button class='button' onclick="getContent()">预览</button>
-        <button onClick="getAllHtml()">获得整个html的内容</button>
-        <button onclick="setContent()">写入内容</button>
-        <button onclick="setContent(true)">追加内容</button>
-        <button onclick="getContentTxt()">获得纯文本</button>
-        <button onclick="getPlainTxt()">获得带格式的纯文本</button>
-        <button onclick="hasContent()">判断是否有内容</button>
-        <button onclick="setFocus()">使编辑器获得焦点</button>
-        <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
-        <button onmousedown="setblur(event)" >编辑器失去焦点</button>
+        <div>
+          <button class='button' onclick="getContent()">预览</button>
+
+      <button onClick="getAllHtml()">获得整个html的内容</button>
+      <button onclick="setContent()">写入内容</button>
+      <button onclick="setContent(true)">追加内容</button>
+      <button onclick="getContentTxt()">获得纯文本</button>
+      <button onclick="getPlainTxt()">获得带格式的纯文本</button>
+      <button onclick="hasContent()">判断是否有内容</button>
+      <button onclick="setFocus()">使编辑器获得焦点</button>
+      <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
+      <button onmousedown="setblur(event)" >编辑器失去焦点</button>
+
     </div>
     <div>
       <button onclick="getText()">获得当前选中的文本</button>
@@ -132,13 +135,13 @@
       console.log(UE.getEditor('editor').getAllHtml());
     }
     function getContent() {
+  console.log(UE.getEditor('editor').getAllHtml().replace('<html>', '').replace('</html>', '').replace('<head>', '').replace('</head>', ''));
         var arr = [];
         arr.push("预览内容为：");
         arr.push(UE.getEditor('editor').getContent());
-      console.log(arr.join("\n"));
       modal.classList.add('active');
       main.classList.add('active');
-      modalContent.innerHTML += arr.join("\n");
+      modalContent.innerHTML += UE.getEditor('editor').getAllHtml().replace('<html>', '').replace('</html>', '').replace('<head>', '').replace('</head>', '')+ arr.join("\n");
     }
 
     function closeModal(){
