@@ -14973,7 +14973,7 @@ UE.plugins['list'] = function () {
             'dot':''
         },
         listDefaultPaddingLeft : '30',
-        listiconpath : 'http://bs.baidu.com/listicon/',
+        listiconpath : 'ueditor-list/',
         maxListLevel : -1,//-1不限制
         disablePInList:false
     } );
